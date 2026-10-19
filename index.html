@@ -517,18 +517,7 @@
                 <img class="letter-inline-image" id="letterInlineImage" src="" alt="">
                 <span class="letter-image-caption">♥</span>
             </div>
-        
-            <div id="videoModalBtnWrap" style="text-align:center; margin-top:14px; position:relative; z-index:10;">
-                <button type="button" id="btnOpenClassVideo" style="background:linear-gradient(135deg,#ff69b4,#ff1493); border:none; color:#fff; padding:10px 22px; border-radius:24px; font-size:14px; font-weight:600; cursor:pointer; box-shadow:0 4px 15px rgba(255,105,180,0.5); font-family:inherit;">🎬 Bấm xem Video Kỷ Niệm Lớp</button>
-            </div>
-            <div id="classVideoModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center;">
-                <div style="position:relative; width:90%; max-width:420px; text-align:center;">
-                    <video id="classVideoPlayer" controls playsinline loop style="width:100%; border-radius:16px; box-shadow:0 10px 30px rgba(255,105,180,0.6);">
-                        <source src="assets/class_memory_video.mp4" type="video/mp4">
-                    </video>
-                    <button type="button" id="btnCloseClassVideo" style="margin-top:16px; background:#fff; color:#333; border:none; padding:8px 24px; border-radius:20px; font-size:14px; font-weight:600; cursor:pointer;">✕ Đóng Video</button>
-                </div>
-            </div>
+
     
         </div>
     </div>
@@ -2432,23 +2421,7 @@
         // Listener cho click phong bì lá thư (hoạt động cả khi không có sphere)
         document.getElementById('letter-envelope-img')?.addEventListener('click', handleLetterEnvelopeClick);
 
-        
-        document.getElementById('btnOpenClassVideo')?.addEventListener('click', () => {
-            const m = document.getElementById('classVideoModal');
-            const v = document.getElementById('classVideoPlayer');
-            if (m && v) { m.style.display = 'flex'; v.play().catch(()=>{}); }
-        });
-        document.getElementById('btnCloseClassVideo')?.addEventListener('click', () => {
-            const m = document.getElementById('classVideoModal');
-            const v = document.getElementById('classVideoPlayer');
-            if (m && v) { m.style.display = 'none'; v.pause(); }
-        });
-        document.getElementById('classVideoModal')?.addEventListener('click', (e) => {
-            if (e.target.id === 'classVideoModal') {
-                document.getElementById('classVideoModal').style.display = 'none';
-                document.getElementById('classVideoPlayer')?.pause();
-            }
-        });
+
     
         })(); // end async IIFE
     </script> 
